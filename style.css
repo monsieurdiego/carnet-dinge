@@ -593,6 +593,34 @@ section {
     justify-content: center;
 }
 
+.profile-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 5px solid var(--color-white);
+    position: relative;
+}
+
+.profile-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .profile-placeholder {
     width: 250px;
     height: 250px;
