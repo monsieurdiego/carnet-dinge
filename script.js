@@ -95,7 +95,7 @@ const downloadButtons = document.querySelectorAll('.download-btn');
 
 downloadButtons.forEach(button => {
     button.addEventListener('click', function(e) {
-        e.preventDefault();
+        // Ne pas empêcher le téléchargement par défaut
         
         const card = this.closest('.resource-card');
         const title = card.querySelector('.card-title').textContent;
@@ -106,12 +106,8 @@ downloadButtons.forEach(button => {
             this.style.transform = 'scale(1)';
         }, 150);
         
-        // Notification (remplacer par un vrai système de téléchargement)
-        showNotification(`Téléchargement de "${title}" en cours...`);
-        
-        // Ici, vous pouvez ajouter la logique réelle de téléchargement
-        // Par exemple, déclencher un téléchargement de PDF :
-        // window.location.href = 'path/to/resource.pdf';
+        // Notification
+        showNotification(`Téléchargement de "${title}" démarré !`);
     });
 });
 

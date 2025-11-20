@@ -22,7 +22,9 @@
     /* Matières */
     --color-maths: #4A90E2;
     --color-physique: #E27D60;
+    --color-francais-philo: #8E44AD;
     --color-philo: #8E44AD;
+    --color-strategie: #F39C12;
     --color-info: #27AE60;
     
     /* Typographie */
@@ -105,7 +107,9 @@ img {
 
 /* Boutons */
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.875rem 2rem;
     border-radius: 8px;
     font-weight: 600;
@@ -114,6 +118,12 @@ img {
     border: none;
     transition: var(--transition);
     text-align: center;
+}
+
+.button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .button-primary {
@@ -128,14 +138,17 @@ img {
 }
 
 .button-secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    backdrop-filter: blur(10px);
 }
 
 .button-secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
@@ -164,6 +177,28 @@ img {
     font-weight: 700;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+    flex-shrink: 0;
+}
+
+.logo-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
 .nav-list {
     display: flex;
     list-style: none;
@@ -175,6 +210,12 @@ img {
     color: var(--color-text);
     font-weight: 500;
     position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
 }
 
 .nav-link::after {
@@ -193,18 +234,28 @@ img {
 }
 
 .cta-button {
-    background-color: var(--color-accent);
+    background-color: #FF0000;
     color: var(--color-white);
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.cta-button .youtube-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .cta-button:hover {
-    background-color: var(--color-accent-dark);
+    background-color: #CC0000;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
 }
 
 /* Menu Mobile */
@@ -239,14 +290,24 @@ img {
 }
 
 .hero::before {
-    content: '';
+    content: 'AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          d/dt(∂L/∂q̇)-∂L/∂q=0          div(B)=0          div(E)=ρ/ε₀          rot(B)=μ₀j          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)\A\A          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          ∫∫∫div(A)dV=∮∮A·dS\A\A          AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)\A\A          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          div(B)=0          div(E)=ρ/ε₀          rot(B)=μ₀j\A\A          d/dt(∂L/∂q̇)-∂L/∂q=0          ∫∫∫div(A)dV=∮∮A·dS          AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)\A\A          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          div(B)=0          div(E)=ρ/ε₀';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    font-size: 0.85rem;
+    line-height: 3.8rem;
+    word-wrap: break-word;
+    overflow: hidden;
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 1);
+    pointer-events: none;
+    z-index: 0;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 0.15rem;
+    white-space: pre-wrap;
+    padding: 1rem;
 }
 
 .hero .container {
@@ -287,6 +348,103 @@ img {
     align-items: center;
 }
 
+.hero-visual-placeholder {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hero-badge {
+    background: rgba(255, 215, 0, 0.95);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Garder pour compatibilité */
+.hero-illustration {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: visible;
+}
+
+.student-illustration {
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.float-item {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.float-1 {
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.float-2 {
+    top: 60%;
+    right: -10%;
+    animation-delay: 1s;
+}
+
+.float-3 {
+    bottom: 10%;
+    left: -5%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* Garder l'ancien style pour compatibilité */
 .hero-placeholder {
     width: 100%;
     max-width: 400px;
@@ -330,11 +488,127 @@ section {
     margin: 0 auto;
 }
 
+.section-intro {
+    color: var(--color-text);
+    font-size: 1rem;
+    max-width: 800px;
+    margin: var(--spacing-md) auto 0;
+    line-height: 1.8;
+}
+
+/* ============================================
+   3 PILIERS SECTION
+   ============================================ */
+.piliers {
+    background-color: var(--color-white);
+    padding: var(--spacing-3xl) 0;
+}
+
+.piliers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.pilier-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--color-border);
+    position: relative;
+}
+
+.pilier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.pilier-card.pilier-highlight {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(74, 144, 226, 0.1));
+    border: 3px solid var(--color-primary);
+}
+
+.pilier-card.pilier-highlight::before {
+    content: '⭐ CLÉ DU SUCCÈS';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.375rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.pilier-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pilier-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-white);
+}
+
+.pilier-card h3 {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.375rem;
+    line-height: 1.3;
+}
+
+.pilier-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* ============================================
    RESSOURCES SECTION
    ============================================ */
 .ressources {
     background-color: var(--color-white);
+    position: relative;
+}
+
+.ressources::before {
+    content: '[aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)     Ker(f)     Im(f)     rg(M)     dim(E)     ∫₀¹f(t)dt     ∂f/∂x     grad(f)     div(v)     rot(u)\A     Δφ     rg(A)=dim(Im(A))     P(λ)     𝒪(xⁿ)     f\'(a)=lim[f(x)-f(a)]/(x-a)     X~𝒫(λ)     det(J)     iℏ∂Ψ/∂t=ĤΨ     n₁sin(θ₁)=n₂sin(θ₂)\A     Ld²i/dt²+Rdi/dt+(1/C)i=0     Φ=-λS dT/dx     𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt     ∂²f/∂x²+∂²f/∂y²=0     ½d²f(a)(h²)     ∂ρ/∂t+div(ρv)=0     ∬D·dS=∭ρdV\A     P_reç=P_stock+P_diss     [aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)     Ker(f)     Im(f)     rg(M)     dim(E)     ∫₀¹f(t)dt\A     ∂f/∂x     grad(f)     div(v)     rot(u)     Δφ     rg(A)=dim(Im(A))     P(λ)     𝒪(xⁿ)     f\'(a)=lim[f(x)-f(a)]/(x-a)     X~𝒫(λ)     det(J)\A     iℏ∂Ψ/∂t=ĤΨ     n₁sin(θ₁)=n₂sin(θ₂)     Ld²i/dt²+Rdi/dt+(1/C)i=0     Φ=-λS dT/dx     𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt     ∂²f/∂x²+∂²f/∂y²=0     ½d²f(a)(h²)\A     ∂ρ/∂t+div(ρv)=0     ∬D·dS=∭ρdV     P_reç=P_stock+P_diss     [aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1rem;
+    line-height: 3.2rem;
+    word-wrap: break-word;
+    overflow: hidden;
+    opacity: 0.15;
+    color: rgba(100, 100, 100, 1);
+    pointer-events: none;
+    z-index: 0;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 0.6rem;
+    white-space: pre-wrap;
+}
+
+.ressources .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Filtres */
@@ -451,8 +725,13 @@ section {
     background-color: var(--color-physique);
 }
 
+.matiere-tag.francais-philo,
 .matiere-tag.philo {
-    background-color: var(--color-philo);
+    background-color: var(--color-francais-philo);
+}
+
+.matiere-tag.strategie {
+    background-color: var(--color-strategie);
 }
 
 .matiere-tag.info {
@@ -534,6 +813,31 @@ section {
     box-shadow: var(--shadow-lg);
 }
 
+.methode-card.methode-highlight {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(74, 144, 226, 0.05));
+    border: 2px solid var(--color-primary);
+    position: relative;
+}
+
+.methode-card.methode-highlight::before {
+    content: '⭐ PRIORITÉ';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.methode-card.methode-highlight:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(74, 144, 226, 0.3);
+}
+
 .methode-icon {
     width: 80px;
     height: 80px;
@@ -572,6 +876,208 @@ section {
 .methode-link:hover {
     color: var(--color-primary-dark);
     transform: translateX(5px);
+}
+
+/* ============================================
+   TÉMOIGNAGES (PREUVE SOCIALE)
+   ============================================ */
+.temoignages {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.temoignage-card {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temoignage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.quote-icon {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    width: 40px;
+    height: 40px;
+    color: #007BFF;
+    opacity: 0.2;
+}
+
+.quote-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.temoignage-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 25px;
+    font-style: italic;
+    padding-left: 20px;
+}
+
+.temoignage-text strong {
+    color: #007BFF;
+    font-weight: 600;
+}
+
+.temoignage-author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.temoignage-author strong {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.temoignage-author span {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ============================================
+   DIAGNOSTIC GRATUIT SECTION
+   ============================================ */
+.diagnostic {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--color-white);
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.diagnostic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.diagnostic-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.diagnostic-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.diagnostic-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-white);
+}
+
+.diagnostic-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.diagnostic-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.95;
+}
+
+.diagnostic-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item svg {
+    flex-shrink: 0;
+    color: #4ADE80;
+}
+
+.feature-item span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.diagnostic-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: var(--transition);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    margin-bottom: var(--spacing-md);
+}
+
+.diagnostic-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.diagnostic-cta svg {
+    width: 20px;
+    height: 20px;
+}
+
+.diagnostic-note {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    font-weight: 500;
+    margin: 0;
 }
 
 /* ============================================
@@ -649,6 +1155,14 @@ section {
     margin-bottom: var(--spacing-sm);
 }
 
+.declic-story {
+    margin-bottom: var(--spacing-lg);
+}
+
+.declic-story p {
+    margin-bottom: var(--spacing-md);
+}
+
 .apropos-bio {
     font-size: 1.125rem;
     color: var(--color-text);
@@ -659,6 +1173,12 @@ section {
     color: var(--color-text-light);
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
+}
+
+.highlight-number {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1em;
 }
 
 .apropos-stats {
@@ -867,6 +1387,14 @@ section {
         grid-template-columns: 1fr;
     }
     
+    .piliers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .temoignages-grid {
+        grid-template-columns: 1fr;
+    }
+
     .methodes-grid {
         grid-template-columns: 1fr;
     }
@@ -900,6 +1428,20 @@ section {
     .filter-btn {
         flex: 1 1 auto;
         min-width: 100px;
+    }
+    
+    .diagnostic-features {
+        text-align: center;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .diagnostic-cta {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -943,9 +1485,12 @@ section {
     }
 }
 
-.hero-content,
-.hero-image {
+.hero-content {
     animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-image {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 /* Smooth scroll offset for fixed header */
