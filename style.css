@@ -691,6 +691,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
 }
 
@@ -700,6 +701,19 @@ section {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-white);
+}
+
+.level-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-maths);
+    background-color: rgba(74, 144, 226, 0.15);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
 }
 
 .matiere-tag.maths {
