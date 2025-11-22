@@ -22,7 +22,7 @@
     /* Matières */
     --color-maths: #4A90E2;
     --color-methodes: #9333ea;
-    --color-physique: #E27D60;
+    --color-physique: #27AE60;
     --color-francais-philo: #8E44AD;
     --color-philo: #8E44AD;
     --color-strategie: #F39C12;
@@ -682,6 +682,7 @@ section {
     border-radius: 999px;
     font-size: 0.75rem;
     font-weight: 600;
+    /* Par défaut, maths (bleu) */
     color: var(--color-maths);
     background-color: rgba(74, 144, 226, 0.15);
     border: 1px solid rgba(74, 144, 226, 0.3);
