@@ -727,16 +727,6 @@ section {
     background-color: var(--color-info);
 }
 
-.difficulty {
-    display: flex;
-    gap: 2px;
-}
-
-.star {
-    color: #FFD700;
-    font-size: 1rem;
-}
-
 .card-title {
     color: var(--color-text);
     font-size: 1.25rem;
