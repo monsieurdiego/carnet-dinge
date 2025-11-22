@@ -21,6 +21,7 @@
     
     /* Matières */
     --color-maths: #4A90E2;
+    --color-methodes: #8b5cf6;
     --color-physique: #E27D60;
     --color-francais-philo: #8E44AD;
     --color-philo: #8E44AD;
@@ -703,6 +704,10 @@ section {
 
 .matiere-tag.maths {
     background-color: var(--color-maths);
+}
+
+.matiere-tag.methodes {
+    background-color: var(--color-methodes);
 }
 
 .matiere-tag.physique {
