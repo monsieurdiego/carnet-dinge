@@ -568,32 +568,6 @@ section {
    ============================================ */
 .ressources {
     background-color: var(--color-white);
-    position: relative;
-}
-
-.ressources::before {
-    content: '[aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)     Ker(f)     Im(f)     rg(M)     dim(E)     ∫₀¹f(t)dt     ∂f/∂x     grad(f)     div(v)     rot(u)\A     Δφ     rg(A)=dim(Im(A))     P(λ)     𝒪(xⁿ)     f\'(a)=lim[f(x)-f(a)]/(x-a)     X~𝒫(λ)     det(J)     iℏ∂Ψ/∂t=ĤΨ     n₁sin(θ₁)=n₂sin(θ₂)\A     Ld²i/dt²+Rdi/dt+(1/C)i=0     Φ=-λS dT/dx     𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt     ∂²f/∂x²+∂²f/∂y²=0     ½d²f(a)(h²)     ∂ρ/∂t+div(ρv)=0     ∬D·dS=∭ρdV\A     P_reç=P_stock+P_diss     [aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)     Ker(f)     Im(f)     rg(M)     dim(E)     ∫₀¹f(t)dt\A     ∂f/∂x     grad(f)     div(v)     rot(u)     Δφ     rg(A)=dim(Im(A))     P(λ)     𝒪(xⁿ)     f\'(a)=lim[f(x)-f(a)]/(x-a)     X~𝒫(λ)     det(J)\A     iℏ∂Ψ/∂t=ĤΨ     n₁sin(θ₁)=n₂sin(θ₂)     Ld²i/dt²+Rdi/dt+(1/C)i=0     Φ=-λS dT/dx     𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt     ∂²f/∂x²+∂²f/∂y²=0     ½d²f(a)(h²)\A     ∂ρ/∂t+div(ρv)=0     ∬D·dS=∭ρdV     P_reç=P_stock+P_diss     [aᵢⱼ]     det(A)     tr(M)     A⁻¹     u·v     ‖v‖     ⟨u,v⟩     λ∈Sp(A)';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 1rem;
-    line-height: 3.2rem;
-    word-wrap: break-word;
-    overflow: hidden;
-    opacity: 0.15;
-    color: rgba(100, 100, 100, 1);
-    pointer-events: none;
-    z-index: 0;
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 0.6rem;
-    white-space: pre-wrap;
-}
-
-.ressources .container {
-    position: relative;
-    z-index: 1;
 }
 
 /* Filtres */
