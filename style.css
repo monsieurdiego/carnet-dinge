@@ -729,6 +729,24 @@ section {
     flex-grow: 1;
 }
 
+/* Tag thématiques (Analyse / Algèbre) */
+.topic-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.topic-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #334155; /* slate-700 */
+    background: #f1f5f9; /* slate-100 */
+    border: 1px solid #e2e8f0; /* slate-200 */
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+}
+
 .download-btn {
     display: flex;
     align-items: center;

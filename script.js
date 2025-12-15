@@ -41,18 +41,24 @@ const searchInput = document.getElementById('search-input');
 // Fonction pour filtrer les ressources
 function filterResources(filterValue, searchTerm = '') {
     resourceCards.forEach(card => {
-        const matiere = card.getAttribute('data-matiere');
+        const matiere = (card.getAttribute('data-matiere') || '').toLowerCase();
+        const tags = (card.getAttribute('data-tags') || '')
+            .split(',')
+            .map(t => t.trim().toLowerCase())
+            .filter(Boolean);
         const title = card.querySelector('.card-title').textContent.toLowerCase();
         const description = card.querySelector('.card-description').textContent.toLowerCase();
-        
-        const matchesFilter = filterValue === 'tous' || matiere === filterValue;
-        const matchesSearch = searchTerm === '' || 
-                            title.includes(searchTerm.toLowerCase()) || 
-                            description.includes(searchTerm.toLowerCase());
-        
+
+        const isTous = filterValue === 'tous';
+        const inMatiere = matiere === filterValue;
+        const inTags = tags.includes(filterValue);
+        const matchesFilter = isTous || inMatiere || inTags;
+        const matchesSearch = searchTerm === '' ||
+            title.includes(searchTerm.toLowerCase()) ||
+            description.includes(searchTerm.toLowerCase());
+
         if (matchesFilter && matchesSearch) {
             card.classList.remove('hidden');
-            // Animation d'apparition
             card.style.animation = 'fadeInUp 0.5s ease-out';
         } else {
             card.classList.add('hidden');
