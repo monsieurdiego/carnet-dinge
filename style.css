@@ -941,6 +941,57 @@ section {
     color: #666;
 }
 
+.temoignage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.temoignage-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.temoignage-author {
+    text-align: right;
+    color: #666;
+    font-size: 0.95rem;
+    margin: auto 0 0;
+}
+
+.faq {
+    background-color: var(--color-background);
+    padding: var(--spacing-3xl) 0;
+}
+
+.faq-list {
+    display: grid;
+    gap: var(--spacing-md);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
 /* ============================================
    DIAGNOSTIC GRATUIT SECTION
    ============================================ */
@@ -1326,6 +1377,10 @@ section {
     .apropos-stats {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .temoignage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Mobile (max-width: 768px) */
@@ -1379,6 +1434,12 @@ section {
 
     .temoignages-grid {
         grid-template-columns: 1fr;
+        padding: 0 var(--spacing-md);
+    }
+
+    .temoignage-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-md);
     }
 
     .methodes-grid {
