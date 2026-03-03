@@ -942,12 +942,14 @@ section {
 }
 
 .temoignage-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    overflow-x: auto;
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
+    scrollbar-width: thin;
+    scroll-snap-type: x mandatory;
 }
 
 .temoignage-card {
@@ -957,7 +959,9 @@ section {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
+    flex: 0 0 350px; /* Assure que les cartes gardent une taille fixe pour scroller horizontalement */
+    scroll-snap-align: start;
 }
 
 .temoignage-author {
@@ -1379,7 +1383,7 @@ section {
     }
 
     .temoignage-grid {
-        grid-template-columns: repeat(3, 1fr);
+        /* Keep flex wrap styling across viewports */
     }
 }
 
@@ -1438,8 +1442,7 @@ section {
     }
 
     .temoignage-grid {
-        grid-template-columns: 1fr;
-        padding: 0 var(--spacing-md);
+        padding: 1rem var(--spacing-md);
     }
 
     .methodes-grid {
