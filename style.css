@@ -1,3 +1,11 @@
+/* Forcer le footer à être full-width premium, sans fond blanc ni padding sur le container */
+.footer .container {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 1400px;
+    width: 100%;
+}
 /* ============================================
    RESET ET VARIABLES
    ============================================ */
