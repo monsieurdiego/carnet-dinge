@@ -336,4 +336,26 @@ document.head.appendChild(pulseStyle);
 
 console.log('%c🚀 Carnet d\'Ingé', 'font-size: 20px; font-weight: bold; color: #007BFF;');
 console.log('%cRéussir la Prépa avec les bonnes méthodes!', 'font-size: 14px; color: #666;');
-console.log('%cDéveloppé avec ❤️ pour les étudiants MPSI/PSI', 'font-size: 12px; color: #FF6B6B;');
+console.log('%cDéveloppé avec ❤️ pour les étudiants de prépa', 'font-size: 12px; color: #FF6B6B;');
+
+
+// Gestion du texte du menu déroulant (Ressources)
+const details = document.getElementById('resources-details');
+const summaryText = document.getElementById('summary-text');
+if (details && summaryText) {
+    details.addEventListener('toggle', (e) => {
+        if (details.open) {
+            summaryText.textContent = "Fermer les fiches de révision ▲";
+        } else {
+            summaryText.textContent = "Voir toutes les fiches de révision ▼";
+        }
+    });
+
+    // Optionnel : Ouvrir automatiquement si on clique sur un filtre
+    const resourceFilterBtns = document.querySelectorAll('.filter-btn');
+    resourceFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!details.open) details.open = true;
+        });
+    });
+}

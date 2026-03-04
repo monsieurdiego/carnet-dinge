@@ -139,17 +139,16 @@ img {
 }
 
 .button-secondary {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--color-white);
-    border: 2px solid var(--color-white);
-    backdrop-filter: blur(10px);
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
 }
 
 .button-secondary:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-sm);
 }
 
 /* ============================================
@@ -234,30 +233,7 @@ img {
     width: 100%;
 }
 
-.cta-button {
-    background-color: #FF0000;
-    color: var(--color-white);
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
-}
 
-.cta-button .youtube-icon {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.cta-button:hover {
-    background-color: #CC0000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-}
 
 /* Menu Mobile */
 .mobile-menu-toggle {
@@ -283,7 +259,11 @@ img {
    HERO SECTION
    ============================================ */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #0f172a;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 123, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0f172a 0%, #020617 100%);
     color: var(--color-white);
     padding: var(--spacing-3xl) 0;
     position: relative;
@@ -291,24 +271,17 @@ img {
 }
 
 .hero::before {
-    content: 'AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          d/dt(∂L/∂q̇)-∂L/∂q=0          div(B)=0          div(E)=ρ/ε₀          rot(B)=μ₀j          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)\A\A          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          ∫∫∫div(A)dV=∮∮A·dS\A\A          AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)\A\A          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          div(B)=0          div(E)=ρ/ε₀          rot(B)=μ₀j\A\A          d/dt(∂L/∂q̇)-∂L/∂q=0          ∫∫∫div(A)dV=∮∮A·dS          AX=λX          det(M-λI)=0          Σaₙzⁿ          ∮f(z)dz/(z-z₀)          P(X∈B)=∫f(x)dx          E[X]=Σxₖp(xₖ)          rot(E)=-∂B/∂t          J=σE          Δu=(1/c²)∂²u/∂t²          dS=δQ/T          dU=TdS-PdV          rg(A)=dim(Im(A))          P(λ)          grad(f)          div(A)          rot(A)\A\A          𝒪(xⁿ)          f\'(a)=lim[f(x)-f(a)]/(x-a)          X~𝒫(λ)          det(J)          iℏ∂Ψ/∂t=ĤΨ          n₁sin(θ₁)=n₂sin(θ₂)          Ld²i/dt²+Rdi/dt+(1/C)i=0          Φ=-λS dT/dx          𝓛(f)(p)=∫₀^∞ e^(-pt)f(t)dt          ∂²f/∂x²+∂²f/∂y²=0          ½d²f(a)(h²)          ∂ρ/∂t+div(ρv)=0          ∬D·dS=∭ρdV          P_reç=P_stock+P_diss          div(B)=0          div(E)=ρ/ε₀';
+    content: '';
     position: absolute;
     top: 0;
-    left: -5%;
-    width: 110%;
+    left: 0;
+    width: 100%;
     height: 100%;
-    font-size: 0.85rem;
-    line-height: 3.8rem;
-    word-wrap: break-word;
-    overflow: hidden;
-    opacity: 0.5;
-    color: rgba(255, 255, 255, 1);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
     pointer-events: none;
     z-index: 0;
-    font-family: 'Times New Roman', serif;
-    letter-spacing: 0.15rem;
-    white-space: pre-wrap;
-    padding: 1rem;
 }
 
 .hero .container {
@@ -943,7 +916,13 @@ section {
 
 .temoignage-grid {
     display: flex;
+    align-items: flex-start;
+    align-items: flex-start;
     overflow-x: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 2rem, black calc(100% - 2rem), transparent);
+    mask-image: linear-gradient(to right, transparent, black 2rem, black calc(100% - 2rem), transparent);
+    padding-bottom: 1.5rem; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch;
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -959,7 +938,7 @@ section {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: max-content;
     flex: 0 0 350px; /* Assure que les cartes gardent une taille fixe pour scroller horizontalement */
     scroll-snap-align: start;
 }
@@ -1089,30 +1068,11 @@ section {
     font-weight: 500;
 }
 
-.diagnostic-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    background-color: var(--color-white);
-    color: var(--color-primary);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.125rem;
-    transition: var(--transition);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    margin-bottom: var(--spacing-md);
-}
 
-.diagnostic-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-}
 
-.diagnostic-cta svg {
-    width: 20px;
-    height: 20px;
-}
+
+
+
 
 .diagnostic-note {
     font-size: 0.9375rem;
@@ -1546,4 +1506,38 @@ section {
 /* Smooth scroll offset for fixed header */
 section {
     scroll-margin-top: 80px;
+}
+
+
+/* UI Enhancements */
+.tooltip-trigger {
+    border-bottom: 1px dashed currentColor;
+    cursor: help;
+}
+
+.hero-hint {
+    font-size: 0.85em;
+    opacity: 0.9;
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.badge-exercice {
+    display: inline-block;
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--color-physique); /* Green */
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+@keyframes hintPulse { 0% { opacity: 0.5; transform: translateX(0); } 50% { opacity: 1; transform: translateX(3px); } 100% { opacity: 0.5; transform: translateX(0); } }
+
+@media (min-width: 1024px) {
+    .swipe-hint {
+        display: none !important;
+    }
 }
