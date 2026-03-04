@@ -1,3 +1,57 @@
+/* Carte premium glassmorphism pour la candidature au suivi */
+.diagnostic-glasscard {
+    background: rgba(17, 28, 50, 0.65);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0, 123, 255, 0.18);
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem auto;
+    position: relative;
+    text-align: center;
+}
+
+.diagnostic-badge {
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 12px 0 rgba(56,189,248,0.18);
+    letter-spacing: 0.04em;
+    z-index: 2;
+}
+
+.button.button-premium {
+    background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 999px;
+    padding: 1.1rem 2.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(56,189,248,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.button.button-premium:hover {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(99,102,241,0.22);
+    filter: brightness(1.08);
+}
 /* Forcer le footer à être full-width premium, sans fond blanc ni padding sur le container */
 .footer .container {
     background: none !important;
