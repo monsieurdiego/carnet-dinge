@@ -1,361 +1,199 @@
 // ============================================
-// MENU MOBILE
+// BASE DE DONNÉES DE LA LIBRAIRIE (JSON)
 // ============================================
+const RESOURCES_DATA = [
+    { title: "Inégalités Classiques — Fiche Méthode", desc: "Toutes les inégalités incontournables pour la prépa : Cauchy-Schwarz, Minkowski, Jensen et bien d'autres (SUP & SPÉ).", mat: "maths", lvl: "SUP & SPÉ", tags: ["analyse", "spe"], file: "fiche-inegalites-classiques-sup-spe.pdf", topic: "Analyse" },
+    { title: "Probabilités — Fiche Méthode", desc: "Méthodes et exercices classiques pour maîtriser les probabilités en prépa (niveau SUP & SPÉ).", mat: "maths", lvl: "SUP & SPÉ", tags: ["probabilites", "spe"], file: "fiche-probas-sup-spe.pdf", topic: "Probabilités" },
+    { title: "Algèbre Linéaire — Fiche des Classiques", desc: "Exercices et méthodes incontournables pour maîtriser l’algèbre linéaire en prépa (SUP & SPÉ).", mat: "maths", lvl: "SUP & SPÉ", tags: ["algebre", "spe"], file: "fiche-classiques-algebre-lineaire-sup.pdf", topic: "Algèbre" },
+    { title: "Algèbre Bilinéaire — Fiche des Classiques", desc: "Exercices et méthodes incontournables pour maîtriser l’algèbre bilinéaire en prépa (niveau SUP).", mat: "maths", lvl: "SUP", tags: ["algebre", "sup"], file: "fiche-classiques-algebre-bilineaire-sup.pdf", topic: "Algèbre" },
+    { title: "Intégration sur un segment — Fiche des Classiques", desc: "Exercices classiques pour maîtriser l’intégration sur un segment en prépa (niveau SUP).", mat: "maths", lvl: "SUP", tags: ["analyse", "sup"], file: "fiche-classiques-integration-segment-sup.pdf", topic: "Analyse" },
+    { title: "Développements Limités — Fiche des Classiques", desc: "Exercices classiques et incontournables pour maîtriser les DL en prépa (niveau SUP).", mat: "maths", lvl: "SUP", tags: ["analyse", "sup"], file: "fiche-classiques-dl-sup.pdf", topic: "Analyse" },
+    { title: "Suites — Fiche des Classiques", desc: "Toutes les démonstrations et exercices incontournables pour maîtriser les suites en prépa.", mat: "maths", lvl: "SUP", tags: ["analyse", "sup"], file: "fiche-classiques-suites.pdf", topic: "Analyse" },
+    { title: "Séries Numériques — Fiche des Classiques", desc: "Exercices et méthodes incontournables pour maîtriser les séries numériques en prépa (SUP & SPÉ).", mat: "maths", lvl: "SUP & SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-series-numeriques.pdf", topic: "Analyse" },
+    { title: "Intégrales généralisées — Fiche des Classiques", desc: "Exercices classiques pour maîtriser les intégrales généralisées en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-integrales-generalisees-spe.pdf", topic: "Analyse" },
+    { title: "Intégrales à paramètre — Fiche des Classiques", desc: "Exercices classiques pour maîtriser les intégrales à paramètre en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-integrales-a-parametre-spe.pdf", topic: "Analyse" },
+    { title: "Topologie des EVN — Fiche des Classiques", desc: "Exercices classiques pour maîtriser la topologie des EVN en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-topologie-evn-spe.pdf", topic: "Analyse" },
+    { title: "Suites de fonctions — Fiche des Classiques", desc: "Exercices classiques pour maîtriser les suites de fonctions en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-suites-de-fonctions-spe.pdf", topic: "Analyse" },
+    { title: "Séries entières — Fiche des Classiques", desc: "Exercices classiques pour maîtriser les séries entières en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-series-entieres-spe.pdf", topic: "Analyse" },
+    { title: "Calcul différentiel — Fiche des Classiques", desc: "Exercices classiques pour maîtriser le calcul différentiel en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-calcul-differentiel-spe.pdf", topic: "Analyse" },
+    { title: "Séries de fonctions — Fiche des Classiques", desc: "Exercices classiques pour maîtriser les séries de fonctions en prépa (niveau SPÉ).", mat: "maths", lvl: "SPÉ", tags: ["analyse", "spe"], file: "fiche-classiques-series-de-fonctions-spe.pdf", topic: "Analyse" },
+    { title: "Réduction — Fiche des Classiques (Partie 1)", desc: "Toutes les démonstrations et exercices incontournables pour maîtriser la réduction en prépa.", mat: "maths", lvl: "SPÉ", tags: ["algebre", "spe"], file: "reduction-exos-classiques.pdf", topic: "Algèbre" },
+    { title: "Électrocinétique (filtres) — Fiche de cours", desc: "Résumé complet du cours d'électrocinétique SUP : définitions, lois, méthodes et points clés pour réussir.", mat: "physique", lvl: "SUP", tags: ["sup"], file: "fiche-electrocinétique-physique-sup.pdf", topic: null },
+    { title: "Induction — Fiche de cours", desc: "Résumé complet du cours d'induction SUP : définitions, lois, méthodes et points clés pour réussir.", mat: "physique", lvl: "SUP", tags: ["sup"], file: "Fiche_physique_Induction.pdf", topic: null },
+    { title: "Méthode — Système Anti-Friction", desc: "Plan d'action complet pour structurer vos semaines de prépa et garder un rythme durable.", mat: "methodes", lvl: "SUP & SPÉ", tags: ["sup", "spe"], file: "methode-systeme-anti-friction.pdf", topic: null },
+    { title: "Protocole Anti-Fatigue & Sommeil", desc: "Routine en quatre étapes pour retrouver un sommeil réparateur et maintenir votre énergie en prépa.", mat: "methodes", lvl: "SUP & SPÉ", tags: ["sup", "spe"], file: "fiche-protocole-anti-fatigue.pdf", topic: null },
+    { title: "Thermodynamique — Fiche de cours", desc: "Résumé complet du cours de thermodynamique SUP : définitions, théorèmes, méthodes et points clés pour réussir.", mat: "physique", lvl: "SUP", tags: ["sup"], file: "fiche-classiques-thermodynamique-sup.pdf", topic: null },
+    { title: "Opérations vectorielles — Fiche de cours", desc: "Résumé des opérations vectorielles en Physique SPÉ : définitions, propriétés et méthodes essentielles.", mat: "physique", lvl: "SPÉ", tags: ["spe"], file: "operations-vectorielles.pdf", topic: null }
+];
 
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+// ============================================
+// INITIALISATION DES ÉLÉMENTS DU DOM
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initLibraryToggle();
+    initLibraryEngine();
+    initScrollAnimations();
+});
 
-// Toggle mobile menu
-if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
+// ============================================
+// GESTION NAVIGATION ET MENU MOBILE
+// ============================================
+function initMobileMenu() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('nav-menu');
+    
+    if (!toggle || !menu) return;
+
+    const closeMenu = () => { menu.classList.remove('active'); toggle.classList.remove('active'); };
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        toggle.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
+    document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+    });
+}
+
+// ============================================
+// ACCORDÉON DE LA LIBRAIRIE
+// ============================================
+function initLibraryToggle() {
+    const toggleBtn = document.getElementById('library-toggle-btn');
+    const contentZone = document.getElementById('library-content');
+    const heroBtn = document.getElementById('hero-access-fiches');
+
+    if (!toggleBtn || !contentZone) return;
+
+    const handleToggle = () => {
+        const isHidden = contentZone.classList.toggle('is-hidden');
+        toggleBtn.textContent = isHidden ? "Voir toutes les fiches de révision ▼" : "Fermer les fiches de révision ▲";
+    };
+
+    toggleBtn.addEventListener('click', handleToggle);
+    if (heroBtn) {
+        heroBtn.addEventListener('click', () => {
+            contentZone.classList.remove('is-hidden');
+            toggleBtn.textContent = "Fermer les fiches de révision ▲";
+            document.querySelector('#ressources').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+}
+
+// ============================================
+// MOTEUR DE DYNAMISATION DE LA LIBRAIRIE
+// ============================================
+function initLibraryEngine() {
+    const grid = document.getElementById('resources-grid');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    if (!grid) return;
+
+    let currentFilter = 'tous';
+    let currentSearch = '';
+
+    const render = () => {
+        grid.innerHTML = '';
+        
+        const filtered = RESOURCES_DATA.filter(item => {
+            const matchesFilter = currentFilter === 'tous' || item.mat === currentFilter || item.tags.includes(currentFilter);
+            const matchesSearch = !currentSearch || 
+                item.title.toLowerCase().includes(currentSearch) || 
+                item.desc.toLowerCase().includes(currentSearch);
+            return matchesFilter && matchesSearch;
+        });
+
+        filtered.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'resource-card is-animated';
+            card.innerHTML = `
+                <div class="card-header">
+                    <span class="matiere-tag ${item.mat}">${item.mat.charAt(0).toUpperCase() + item.mat.slice(1)}</span>
+                    <span class="level-tag">${item.lvl}</span>
+                </div>
+                <h3 class="card-title">${item.title}</h3>
+                <p class="card-description">${item.desc}</p>
+                ${item.topic ? `<div class="topic-tags"><span class="topic-tag">${item.topic}</span></div>` : ''}
+                <a href="ressources/${item.file}" download class="download-btn">
+                    <svg><use href="#icon-download"></use></svg>Télécharger
+                </a>
+            `;
+            
+            card.querySelector('.download-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                showNotification(`Téléchargement de "${item.title}" démarré !`);
+            });
+
+            grid.appendChild(card);
+        });
+    };
+
+    // Listeners filtres
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-filter');
+            render();
         });
     });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-        }
-    });
+    // Listeners recherche
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value.toLowerCase().trim();
+            render();
+        });
+    }
+
+    render(); // Premier affichage synchrone
 }
 
 // ============================================
-// SYSTÈME DE FILTRES DES RESSOURCES
+// SYSTEM TOAST NOTIFICATIONS
 // ============================================
-
-const filterButtons = document.querySelectorAll('.filter-btn');
-const resourceCards = document.querySelectorAll('.resource-card');
-const searchInput = document.getElementById('search-input');
-
-// Fonction pour filtrer les ressources
-function filterResources(filterValue, searchTerm = '') {
-    resourceCards.forEach(card => {
-        const matiere = (card.getAttribute('data-matiere') || '').toLowerCase();
-        const tags = (card.getAttribute('data-tags') || '')
-            .split(',')
-            .map(t => t.trim().toLowerCase())
-            .filter(Boolean);
-        const title = card.querySelector('.card-title').textContent.toLowerCase();
-        const description = card.querySelector('.card-description').textContent.toLowerCase();
-
-        const isTous = filterValue === 'tous';
-        const inMatiere = matiere === filterValue;
-        const inTags = tags.includes(filterValue);
-        const matchesFilter = isTous || inMatiere || inTags;
-        const matchesSearch = searchTerm === '' ||
-            title.includes(searchTerm.toLowerCase()) ||
-            description.includes(searchTerm.toLowerCase());
-
-        if (matchesFilter && matchesSearch) {
-            card.classList.remove('hidden');
-            card.style.animation = 'fadeInUp 0.5s ease-out';
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-}
-
-// Gestion des boutons de filtres
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Retirer la classe active de tous les boutons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Ajouter la classe active au bouton cliqué
-        button.classList.add('active');
-        
-        // Filtrer les ressources
-        const filterValue = button.getAttribute('data-filter');
-        const searchTerm = searchInput ? searchInput.value : '';
-        filterResources(filterValue, searchTerm);
-    });
-});
-
-// Gestion de la barre de recherche
-if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value;
-        const activeFilter = document.querySelector('.filter-btn.active');
-        const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'tous';
-        
-        filterResources(filterValue, searchTerm);
-    });
-}
-
-// ============================================
-// GESTION DES BOUTONS TÉLÉCHARGER
-// ============================================
-
-const downloadButtons = document.querySelectorAll('.download-btn');
-
-downloadButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        // Ne pas empêcher le téléchargement par défaut
-        
-        const card = this.closest('.resource-card');
-        const title = card.querySelector('.card-title').textContent;
-        
-        // Animation de feedback
-        this.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-        }, 150);
-        
-        // Notification
-        showNotification(`Téléchargement de "${title}" démarré !`);
-    });
-});
-
-// Fonction pour afficher une notification
 function showNotification(message) {
-    // Créer l'élément de notification
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    
-    // Styles inline pour la notification
-    Object.assign(notification.style, {
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        backgroundColor: '#007BFF',
-        color: 'white',
-        padding: '1rem 1.5rem',
-        borderRadius: '8px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-        zIndex: '10000',
-        animation: 'slideInRight 0.3s ease-out',
-        maxWidth: '350px',
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '0.9375rem',
-        fontWeight: '500'
-    });
-    
-    document.body.appendChild(notification);
-    
-    // Retirer la notification après 3 secondes
+    const toast = document.createElement('div');
+    toast.className = 'notification slide-in';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
     setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease-in';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
+        toast.classList.replace('slide-in', 'slide-out');
+        toast.addEventListener('animationend', () => toast.remove());
     }, 3000);
 }
 
-// Ajouter les animations pour les notifications
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideInRight {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
+// ============================================
+// LOGIQUE COMPORTEMENTALE (SCROLL ET EFFETS)
+// ============================================
+function initScrollAnimations() {
+    const header = document.querySelector('.header');
     
-    @keyframes slideOutRight {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ============================================
-// SMOOTH SCROLL AMÉLIORÉ
-// ============================================
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ============================================
-// ANIMATIONS AU SCROLL
-// ============================================
-
-// Observer pour animer les éléments au scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease-out';
-            entry.target.style.opacity = '1';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observer les sections
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.section-header, .methode-card, .apropos-content');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        observer.observe(section);
-    });
-});
-
-// ============================================
-// HEADER AU SCROLL
-// ============================================
-
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    // Ajouter une ombre plus prononcée lors du scroll
-    if (currentScroll > 50) {
-        header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// ============================================
-// COMPTEUR ANIMÉ POUR LES STATISTIQUES
-// ============================================
-
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16); // 60 FPS
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target === Infinity ? '∞' : Math.ceil(target);
-            clearInterval(timer);
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
         } else {
-            element.textContent = Math.ceil(start);
-        }
-    }, 16);
-}
-
-// Observer pour les statistiques
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach((stat, index) => {
-                const text = stat.textContent;
-                if (text === '∞') {
-                    stat.style.animation = 'pulse 2s ease-in-out infinite';
-                } else {
-                    const target = parseInt(text.replace('+', ''));
-                    stat.textContent = '0';
-                    setTimeout(() => {
-                        animateCounter(stat, target);
-                        if (text.includes('+')) {
-                            setTimeout(() => {
-                                stat.textContent = target + '+';
-                            }, 2000);
-                        }
-                    }, index * 200);
-                }
-            });
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-// Observer les stats
-const aproposStats = document.querySelector('.apropos-stats');
-if (aproposStats) {
-    statsObserver.observe(aproposStats);
-}
-
-// Animation pulse pour l'infini
-const pulseStyle = document.createElement('style');
-pulseStyle.textContent = `
-    @keyframes pulse {
-        0%, 100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        50% {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-    }
-`;
-document.head.appendChild(pulseStyle);
-
-// ============================================
-// CONSOLE MESSAGE
-// ============================================
-
-console.log('%c🚀 Carnet d\'Ingé', 'font-size: 20px; font-weight: bold; color: #007BFF;');
-console.log('%cRéussir la Prépa avec les bonnes méthodes!', 'font-size: 14px; color: #666;');
-console.log('%cDéveloppé avec ❤️ pour les étudiants de prépa', 'font-size: 12px; color: #FF6B6B;');
-
-
-// Gestion du texte du menu déroulant (Ressources)
-const details = document.getElementById('resources-details');
-const summaryText = document.getElementById('summary-text');
-if (details && summaryText) {
-    details.addEventListener('toggle', (e) => {
-        if (details.open) {
-            summaryText.textContent = "Fermer les fiches de révision ▲";
-        } else {
-            summaryText.textContent = "Voir toutes les fiches de révision ▼";
+            header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
         }
     });
 
-    // Optionnel : Ouvrir automatiquement si on clique sur un filtre
-    const resourceFilterBtns = document.querySelectorAll('.filter-btn');
-    resourceFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (!details.open) details.open = true;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                entry.target.style.opacity = '1';
+                observer.unobserve(entry.target);
+            }
         });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.section-header, .pilier-card, .apropos-content').forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
     });
 }
