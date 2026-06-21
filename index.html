@@ -303,9 +303,11 @@
       <span class="eyebrow">La liste privée</span>
       <h2 class="section-title news" style="margin-top:12px;">Reçois mes meilleures méthodes par mail</h2>
       <p>Je garde mes conseils les plus concrets pour ma liste privée, et c'est là que j'annoncerai en avant-première mes prochains projets. Laisse ton e-mail, rien de plus.</p>
-      <!-- Branche l'attribut action sur ton outil d'e-mailing (Formspree, Brevo, Mailchimp, etc.). Voir la note interne en bas. -->
-      <form class="news-form" action="https://formspree.io/f/REMPLACER_PAR_TON_ID" method="POST">
-        <input type="email" name="email" placeholder="ton.email@exemple.fr" required aria-label="Adresse e-mail">
+      <!-- Formulaire branche sur Brevo (double opt-in). Champs standard Brevo : EMAIL + honeypot email_address_check. -->
+      <form class="news-form" method="POST" action="https://482c408a.sibforms.com/serve/MUIFAEd_duLtJ-iXiLx-TXx6M21PKrKSJ7KB2KcY46rxAIVavnmth0Vf9XHSGCiEHL_BMO5AQG_mm_M_hi5K0AXmVCAFLOXjuypsk4EQQ7tZdve15TJHPhCdyd7cU0qKGcAtcXbpkEx3Un9ZjEhGYszfltkmmKaKVP94lPT_XmiaBOk5IaqXCMdKBBQLmV6bhHFWrWy7OMJVooptCQ==">
+        <input type="email" name="EMAIL" placeholder="ton.email@exemple.fr" required aria-label="Adresse e-mail">
+        <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+        <input type="hidden" name="locale" value="fr">
         <button type="submit" class="btn btn-primary">Je m'inscris</button>
       </form>
       <p class="news-fine">Pas de spam. Désinscription en un clic. Tes données restent privées.</p>
