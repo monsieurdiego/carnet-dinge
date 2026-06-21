@@ -1,815 +1,364 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Carnet d'Ingé - Méthodes et ressources pour réussir en Classe Préparatoire">
-    <title>Carnet d'Ingé - Guide Ultime pour Réussir sa Classe Préparatoire</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" integrity="sha256-G2fR2sKRc-SaXP6oJC7aLZEr3rWdpy+UVnB2jA3bYyI=" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Carnet d'Ingé : la méthode pour dominer la prépa scientifique au lieu de la subir. Notes, stratégies et état d'esprit d'un 5/2 passé de la moyenne à l'excellence.">
+<title>Carnet d'Ingé · Dominer la prépa, pas la subir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" integrity="sha256-G2fR2sKRc-SaXP6oJC7aLZEr3rWdpy+UVnB2jA3bYyI=" crossorigin="anonymous">
+<style>
+  :root{
+    --bg:#0e1014;--bg-2:#12161c;--panel:#161b22;--panel-2:#1b212a;
+    --ink:#f5f6f3;--ink-soft:#c2c8cf;--muted:#878f9a;
+    --accent:#2ba968;--accent-bright:#5fd49a;--accent-deep:#1c7d4d;
+    --line:rgba(255,255,255,.09);--line-soft:rgba(255,255,255,.055);
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Spectral','Georgia',serif;background:var(--bg);color:var(--ink-soft);
+    line-height:1.72;font-size:18px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.ui,.brand,.eyebrow,.nav-link,.btn{font-family:'Space Grotesk',-apple-system,Arial,sans-serif;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
+  a{color:var(--accent-bright);text-decoration:none;}
+  strong{color:var(--ink);font-weight:600;}
+  .eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:600;color:var(--accent-bright);}
+  .section-title{font-size:30px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.14;}
+  .section-sub{color:var(--muted);font-size:16px;margin-top:10px;}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;letter-spacing:.01em;
+    border-radius:10px;padding:13px 22px;cursor:pointer;border:1px solid transparent;transition:.18s;line-height:1;}
+  .btn-primary{background:var(--accent);color:#06140c;}
+  .btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px);}
+  .btn-ghost{background:rgba(255,255,255,.04);color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-bright);}
+  .yt-icon{width:19px;height:19px;}
+
+  /* header */
+  .header{position:sticky;top:0;z-index:50;background:rgba(14,16,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;height:66px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-.01em;}
+  .brand .dot{color:var(--accent);}
+  .brand-mark{width:30px;height:30px;border-radius:7px;border:1px solid var(--line);background:
+    linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/8px 8px,
+    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/8px 8px,var(--panel);
+    display:flex;align-items:center;justify-content:center;color:var(--accent-bright);font-size:15px;font-weight:700;}
+  .nav-list{display:flex;gap:28px;list-style:none;}
+  .nav-link{color:var(--ink-soft);font-size:14.5px;font-weight:500;transition:.15s;}
+  .nav-link:hover{color:var(--accent-bright);}
+  .header .btn{padding:10px 16px;font-size:13.5px;}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;}
+  .menu-toggle span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s;}
+
+  /* hero */
+  .hero{position:relative;padding:96px 0 92px;overflow:hidden;border-bottom:1px solid var(--line-soft);}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/34px 34px,
+    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/34px 34px;
+    mask-image:radial-gradient(120% 90% at 30% 0%,#000 35%,transparent 80%);z-index:0;}
+  .hero::after{content:"";position:absolute;top:-20%;left:20%;width:60%;height:80%;
+    background:radial-gradient(closest-side,rgba(43,169,104,.16),transparent);z-index:0;pointer-events:none;}
+  .hero-math{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .hero-math span{position:absolute;font-family:'Space Grotesk',sans-serif;color:#fff;opacity:.05;font-size:30px;white-space:nowrap;}
+  .hm1{top:14%;right:6%;transform:rotate(-8deg);}
+  .hm2{bottom:18%;left:4%;transform:rotate(6deg);font-size:24px;}
+  .hm3{top:60%;right:12%;transform:rotate(4deg);font-size:22px;}
+  .hero-inner{position:relative;z-index:2;max-width:760px;}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:52px;line-height:1.05;font-weight:600;letter-spacing:-.025em;color:var(--ink);margin:20px 0 0;}
+  .hero h1 .hl{color:var(--accent-bright);}
+  .hero-sub{font-size:20px;line-height:1.6;color:var(--ink-soft);margin-top:22px;max-width:620px;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-meta{margin-top:26px;font-size:13.5px;color:var(--muted);font-family:'Space Grotesk',sans-serif;letter-spacing:.02em;}
+  .hero-meta b{color:var(--ink-soft);font-weight:600;}
+
+  /* story */
+  .story{padding:88px 0;}
+  .story-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:54px;align-items:center;}
+  .story-photo{position:relative;}
+  .story-photo .frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--panel);aspect-ratio:4/5;
+    background-image:
+      linear-gradient(var(--line-soft) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:26px 26px;display:flex;align-items:flex-end;justify-content:center;}
+  .story-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-fallback{padding:30px;text-align:center;color:var(--muted);font-family:'Space Grotesk',sans-serif;font-size:13px;line-height:1.6;}
+  .story-photo .tagcard{position:absolute;left:-14px;bottom:-16px;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:12px 16px;box-shadow:0 14px 30px rgba(0,0,0,.4);}
+  .story-photo .tagcard .n{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--accent-bright);font-size:19px;line-height:1;}
+  .story-photo .tagcard .l{font-size:11.5px;color:var(--muted);font-family:'Space Grotesk',sans-serif;letter-spacing:.03em;margin-top:3px;}
+  .story-text h2{margin-bottom:8px;}
+  .story-text p{margin-top:16px;font-size:18px;}
+  .story-sign{margin-top:20px;font-style:italic;color:var(--muted);}
+
+  /* method */
+  .method{padding:84px 0;background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+  .method-head{max-width:680px;margin-bottom:44px;}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .pillar{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px 24px;transition:.2s;position:relative;overflow:hidden;}
+  .pillar:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .pillar.lead{border-color:rgba(43,169,104,.4);background:linear-gradient(180deg,rgba(43,169,104,.07),var(--panel));}
+  .pillar .num{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent-bright);}
+  .pillar h3{font-size:19px;color:var(--ink);font-weight:600;margin:14px 0 10px;letter-spacing:-.01em;}
+  .pillar p{font-size:15.5px;line-height:1.62;color:var(--ink-soft);}
+
+  /* youtube */
+  .yt{padding:86px 0;}
+  .yt-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;}
+  .yt-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:38px 34px;text-align:center;position:relative;overflow:hidden;}
+  .yt-card::before{content:"";position:absolute;inset:0;background:
+    linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/22px 22px,
+    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/22px 22px;
+    mask-image:radial-gradient(80% 80% at 50% 0%,#000,transparent 75%);}
+  .yt-card>*{position:relative;z-index:1;}
+  .yt-logo{width:64px;height:64px;border-radius:16px;background:#ff0000;display:inline-flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .yt-logo svg{width:38px;height:38px;color:#fff;}
+  .yt-card h3{font-size:24px;color:var(--ink);font-weight:600;margin-bottom:8px;}
+  .yt-card p{font-size:15.5px;color:var(--ink-soft);margin-bottom:22px;}
+  .yt-count{font-family:'Space Grotesk',sans-serif;font-size:13px;color:var(--muted);margin-top:16px;letter-spacing:.02em;}
+  .yt-text h2{margin-bottom:14px;}
+  .yt-text p{font-size:17.5px;margin-bottom:14px;}
+
+  /* newsletter */
+  .news{padding:84px 0 90px;background:var(--bg-2);border-top:1px solid var(--line-soft);}
+  .news-card{max-width:680px;margin:0 auto;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:46px 38px;position:relative;overflow:hidden;}
+  .news-card::after{content:"";position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:70%;height:80%;background:radial-gradient(closest-side,rgba(43,169,104,.14),transparent);}
+  .news-card>*{position:relative;z-index:1;}
+  .news h2{font-size:28px;}
+  .news p{margin:14px auto 26px;max-width:520px;font-size:16.5px;color:var(--ink-soft);}
+  .news-form{display:flex;gap:10px;max-width:480px;margin:0 auto;}
+  .news-form input{flex:1;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--ink);font-family:'Space Grotesk',sans-serif;font-size:14.5px;}
+  .news-form input:focus{outline:none;border-color:var(--accent);}
+  .news-form .btn{white-space:nowrap;}
+  .news-fine{font-size:12.5px;color:var(--muted);margin-top:16px;font-family:'Space Grotesk',sans-serif;}
+
+  /* footer */
+  .footer{padding:54px 0 30px;border-top:1px solid var(--line-soft);}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px;}
+  .footer h3{color:var(--ink);font-size:18px;}
+  .footer h3 .dot{color:var(--accent);}
+  .footer-brand p{font-size:14px;color:var(--muted);margin-top:6px;max-width:240px;}
+  .footer h4{color:var(--ink);font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:8px;}
+  .footer-col a{color:var(--ink-soft);font-size:14.5px;}
+  .footer-col a:hover{color:var(--accent-bright);}
+  .social{display:flex;gap:12px;}
+  .social a{width:38px;height:38px;border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ink-soft);transition:.18s;}
+  .social a:hover{border-color:var(--accent);color:var(--accent-bright);}
+  .social svg{width:19px;height:19px;}
+  .footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;font-size:13px;color:var(--muted);font-family:'Space Grotesk',sans-serif;}
+  .footer-bottom a{color:var(--muted);}
+  .footer-bottom a:hover{color:var(--ink-soft);}
+
+  @media(max-width:860px){
+    .story-grid,.yt-grid{grid-template-columns:1fr;gap:36px;}
+    .pillars{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .nav-list,.header .btn-yt{display:none;}
+    .menu-toggle{display:flex;}
+    .nav{position:absolute;top:66px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px 26px;display:none;}
+    .nav.open{display:block;}
+    .nav .nav-list{display:flex;flex-direction:column;gap:16px;}
+    .story-photo{max-width:340px;margin:0 auto;}
+  }
+  @media(max-width:520px){
+    .hero{padding:64px 0 60px;}.hero h1{font-size:32px;}.hero-sub{font-size:17px;}
+    .news-form{flex-direction:column;}.section-title{font-size:25px;}
+    .hero-math{display:none;}
+  }
+</style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-profile">
-                        <img src="images/profile.jpg" alt="Diégo - Carnet d'Ingé">
-                    </div>
-                    <h1>Carnet d'Ingé</h1>
-                </div>
-                <nav class="nav" id="nav-menu">
-                    <ul class="nav-list">
-                        <li><a href="#ressources" class="nav-link">Ressources</a></li>
-                        <li><a href="#methodes" class="nav-link">Méthodes</a></li>
-                        <li><a href="#declic" class="nav-link">Mon Histoire</a></li>
-                    </ul>
-                </nav>
-                <a href="https://www.youtube.com/@CarnetDinge" target="_blank" class="button button-secondary cta-button">
-                    <svg class="youtube-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                    S'abonner à YouTube
-                </a>
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Mes notes et méthodes de 5/2 pour intégrer</h1>
-                <p class="hero-subtitle">Le '<span class="tooltip-trigger" title="Un système d'organisation numérique centralisé pour ne plus rien oublier">Second Cerveau</span>' qui m'a permis de passer de l'échec en 3/2 à 16/20 en Maths à l'X.<br><span class="hero-hint">(Un système d'organisation numérique centralisé pour maîtriser son cours et ne plus rien oublier)</span></p>
-                <div class="hero-cta">
-        <a href="#avis" class="button button-primary">
-            Découvrir le suivi personnalisé
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#top" class="brand"><span class="brand-mark">C</span>Carnet d'Ingé<span class="dot">.</span></a>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="#histoire" class="nav-link">Mon histoire</a></li>
+        <li><a href="#methode" class="nav-link">La méthode</a></li>
+        <li><a href="#chaine" class="nav-link">La chaîne</a></li>
+        <li><a href="#liste" class="nav-link">La liste</a></li>
+      </ul>
+    </nav>
+    <a href="https://www.youtube.com/@CarnetDinge" target="_blank" rel="noopener" class="btn btn-primary btn-yt">
+      <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      S'abonner
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-math" aria-hidden="true">
+    <span class="hm1">e&#8305;&#7468; = cos &#952; + i sin &#952;</span>
+    <span class="hm2">&#8721;&#8345; k = n(n+1)/2</span>
+    <span class="hm3">&#8704;&#949; &gt; 0, &#8707;N &#8712; &#8469;</span>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow">Méthodes &amp; état d'esprit de prépa</span>
+      <h1>La prépa ne récompense pas ceux qui travaillent le plus,<br>mais ceux qui travaillent <span class="hl">juste</span>.</h1>
+      <p class="hero-sub">En 3/2, j'étais un élève moyen, noyé dans la masse. En 5/2, j'ai changé de méthode, pas de cerveau. Résultat : des 18/20 réguliers et un 16/20 aux écrits de l'X. Je partage ici exactement ce qui a tout changé.</p>
+      <div class="hero-cta">
+        <a href="https://www.youtube.com/@CarnetDinge" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Voir la chaîne YouTube
         </a>
-        <a href="#ressources" class="button button-secondary" onclick="document.getElementById('resources-details').open = true;">
-            Accéder aux fiches
-        </a>
+        <a href="#liste" class="btn btn-ghost">Rejoindre la liste</a>
+      </div>
+      <p class="hero-meta">Aujourd'hui <b>élève-ingénieur aux Mines de Saint-Étienne</b>, admis en double diplôme à <b>l'ENSAE Paris</b>.</p>
     </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-visual-placeholder">
-                    <img src="images/hero-success.jpg" alt="Réussite en Classe Préparatoire" class="hero-img">
-                </div>
-            </div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="story" id="histoire">
+  <div class="container story-grid">
+    <div class="story-photo">
+      <div class="frame">
+        <!-- Photo branchee sur le fichier deja present dans le depot : images/profile.jpg -->
+        <img src="images/profile.jpg" alt="Diego, Carnet d'Ingé" onerror="this.style.display='none';this.parentNode.querySelector('.photo-fallback').style.display='block';">
+        <div class="photo-fallback" style="display:none;">Ajoute ta photo ici :<br>images/profile.jpg</div>
+      </div>
+      <div class="tagcard">
+        <div class="n">16/20</div>
+        <div class="l">Écrits de l'X, en Maths</div>
+      </div>
+    </div>
+    <div class="story-text">
+      <span class="eyebrow">Mon histoire</span>
+      <h2 class="section-title" style="margin-top:12px;">Passer de la moyenne à l'excellence, sans m'épuiser</h2>
+      <p>Je ne suis pas un génie des maths. En première année, je travaillais beaucoup et je ramais quand même. Le problème n'était pas l'effort : c'était la façon dont je l'investissais.</p>
+      <p>En 5/2, j'ai arrêté de travailler dur pour travailler juste. J'ai changé de méthode, de priorités, de manière de rédiger. Mes notes sont passées de moyennes à des <strong>18/20 réguliers</strong>, jusqu'à un <strong>16/20 aux écrits de l'X et de l'ENS</strong>.</p>
+      <p>Aujourd'hui aux Mines de Saint-Étienne, en route vers l'ENSAE, je ne suis pas là pour te refaire un cours magistral. Ma mission est de te transmettre cette méthode exacte : les stratégies concrètes et les outils mentaux pour <strong>arrêter de subir la prépa et commencer à la dominer</strong>.</p>
+      <p class="story-sign">Diego, Carnet d'Ingé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section class="method" id="methode">
+  <div class="container">
+    <div class="method-head">
+      <span class="eyebrow">La méthode</span>
+      <h2 class="section-title" style="margin-top:12px;">Les 3 piliers qui ont tout changé</h2>
+      <p class="section-sub">Comment je suis passé d'élève moyen à fort, sans dormir moins ni travailler plus.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar lead">
+        <span class="num">PILIER 01</span>
+        <h3>La loi de Pareto, 80/20</h3>
+        <p>Arrête de vouloir tout apprendre. En prépa, 20% des exercices classiques rapportent 80% des points. Je t'apprends à cibler ces incontournables pour sécuriser tes notes, au lieu de te noyer dans les détails.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">PILIER 02</span>
+        <h3>L'efficacité radicale</h3>
+        <p>Travailler 15h par jour est une erreur de débutant. Le time-boxing et la gestion de ton énergie te permettent de dormir tes 8h tout en abattant plus de travail utile que la majorité des candidats.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">PILIER 03</span>
+        <h3>Le hacking de concours</h3>
+        <p>Le jour J, ce n'est pas le plus savant qui gagne, c'est le plus stratège. Analyse dimensionnelle, rédaction propre, art de l'impasse intelligente : apprends à récupérer les points que les autres laissent filer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAINE -->
+<section class="yt" id="chaine">
+  <div class="container yt-grid">
+    <div class="yt-text">
+      <span class="eyebrow">La chaîne</span>
+      <h2 class="section-title" style="margin-top:12px;">Tout est sur YouTube, et c'est gratuit</h2>
+      <p>Chaque semaine, je publie des vidéos de méthode, de stratégie et d'état d'esprit pour la prépa scientifique. Du concret, déroulé à la main, sans blabla.</p>
+      <p>Si tu prépares ta première année ou si tu veux passer un cap en sup ou en spé, c'est là que ça se passe.</p>
+      <a href="https://www.youtube.com/@CarnetDinge" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:10px;">
+        <svg class="yt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        S'abonner à la chaîne
+      </a>
+    </div>
+    <div class="yt-card">
+      <div class="yt-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+      <h3>Carnet d'Ingé</h3>
+      <p>Méthodes et stratégies pour réussir la prépa scientifique.</p>
+      <a href="https://www.youtube.com/@CarnetDinge" target="_blank" rel="noopener" class="btn btn-ghost">@CarnetDinge</a>
+      <p class="yt-count">Déjà plus de 1 500 abonnés</p>
+    </div>
+  </div>
+</section>
+
+<!-- LISTE / NEWSLETTER -->
+<section class="news" id="liste">
+  <div class="container">
+    <div class="news-card">
+      <span class="eyebrow">La liste privée</span>
+      <h2 class="section-title news" style="margin-top:12px;">Reçois mes meilleures méthodes par mail</h2>
+      <p>Je garde mes conseils les plus concrets pour ma liste privée, et c'est là que j'annoncerai en avant-première mes prochains projets. Laisse ton e-mail, rien de plus.</p>
+      <!-- Branche l'attribut action sur ton outil d'e-mailing (Formspree, Brevo, Mailchimp, etc.). Voir la note interne en bas. -->
+      <form class="news-form" action="https://formspree.io/f/REMPLACER_PAR_TON_ID" method="POST">
+        <input type="email" name="email" placeholder="ton.email@exemple.fr" required aria-label="Adresse e-mail">
+        <button type="submit" class="btn btn-primary">Je m'inscris</button>
+      </form>
+      <p class="news-fine">Pas de spam. Désinscription en un clic. Tes données restent privées.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Carnet d'Ingé<span class="dot">.</span></h3>
+        <p>Dominer la prépa scientifique au lieu de la subir.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#histoire">Mon histoire</a></li>
+          <li><a href="#methode">La méthode</a></li>
+          <li><a href="#chaine">La chaîne</a></li>
+          <li><a href="#liste">La liste</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Me suivre</h4>
+        <div class="social">
+          <a href="https://www.youtube.com/@CarnetDinge" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/diego-mallard-b06a221bb/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Carnet d'Ingé. Tous droits réservés.</span>
+      <a href="privacy.html">Politique de confidentialité</a>
+      <a href="#" id="cookie-settings-link">Gérer mes cookies</a>
+    </div>
+  </div>
+</footer>
 
-    <!-- DÉCLIC SECTION -->
-    <section class="apropos" id="declic">
-        <div class="container">
-            <div class="apropos-content">
-                <div class="apropos-image">
-                    <div class="profile-photo">
-                        <img src="images/profile.jpg" alt="Diégo - Carnet d'Ingé">
-                    </div>
-                </div>
-                <div class="apropos-text">
-                    <h2 class="section-title">Mon Déclic : Passer de la Moyenne à l'Excellence 🚀</h2>
-                    <div class="declic-story">
-                        <p class="apropos-description">
-                            Je ne suis pas un 'génie' des maths. En 3/2, j'étais un étudiant moyen, noyé dans la masse.<br><br>
-                            Mais en 5/2, j'ai eu le déclic. J'ai arrêté de travailler dur pour travailler juste. Résultat : Je suis passé de notes moyennes à des <strong>18/20 constants</strong> et un <strong>16/20 aux écrits de l'X/ENS</strong>.<br><br>
-                            Aujourd'hui étudiant aux Mines, je ne suis pas là pour vous faire un cours magistral. Ma mission est de vous transmettre cette méthode exacte. Je vous donne les <strong>stratégies concrètes</strong> et les <strong>outils mentaux</strong> pour qu'il vous arrive la même chose : <strong>arrêter de subir la prépa et commencer à la dominer</strong>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AVIS SUIVI PERSONNALISÉ -->
-    <section class="temoignage-avis" id="avis" style="background: #f8f9fa; padding: 2rem 0;">
-        <div class="avis-header" style="text-align: center; margin-bottom: 2.5rem;">
-            <div style="font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 0.5rem; color: #F39C12;">
-                ⭐⭐⭐⭐⭐
-            </div>
-            <h2 style="font-weight: 800; font-size: 2.2rem; color: #1a1a1a; margin-bottom: 0.5rem; line-height: 1.2;">
-                Quelques avis sur le suivi personnalisé
-            </h2>
-            <p style="font-size: 1rem; color: #666; font-style: italic;">
-                Avis d'anciens élèves accompagnés
-            </p>
-        </div>
-                <div class="swipe-hint" style="text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 1rem; display: flex; justify-content: center; align-items: center; gap: 0.5rem; animation: hintPulse 2.5s infinite;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-            Faites défiler pour voir plus d'avis
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </div>
-        <div class="temoignage-grid">
-            <!-- PSI Avis -->
-            <div class="temoignage-card">
-                <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 1rem;">
-                    « En prépa, on est vite submergé. Le suivi de Diego m'a permis de reprendre le dessus : son approche directe et efficace m'a aidé à débloquer des points de méthode clés, à maîtriser des chapitres complexes et, surtout, à mieux gérer mon temps. C'est une aide précieuse que je recommande vivement pour le gain de temps et la clarté que l'on y gagne. »
-                </p>
-                <p class="temoignage-author">— Thomas, élève en PSI</p>
-            </div>
-
-            <!-- MPSI Avis -->
-            <div class="temoignage-card">
-                <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 1rem;">
-                    « Ce suivi permet de bien mieux comprendre le cours, de préparer efficacement les DS et de cibler précisément ce qui ne va pas dans la méthode de travail (ce qui est difficile à deviner seule). C'est une aide précieuse, je recommande fortement. »
-                </p>
-                <p class="temoignage-author">— Clara, étudiante en MPSI</p>
-            </div>
-
-            <!-- MPSI Avis 2 -->
-            <div class="temoignage-card">
-                <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 1rem;">
-                    « Cet accompagnement est vraiment précieux en prépa. Un suivi personnalisé de telle sorte est très intéressant : avoir un référent à l’écoute permet de mieux s’organiser, de rester motivé. Un vrai soutien académique ! »
-                </p>
-                <p class="temoignage-author">— Léo, élève en MPSI</p>
-            </div>
-            <!-- PSI Avis 2 -->
-            <div class="temoignage-card">
-                <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 1rem;">
-                    « Un accompagnement personnalisé qui a fait toute la différence en deuxième année de prépa. Grâce à ce suivi, proposant des conseils et des méthodes adaptées à mes besoins et aux attentes aux concours, j'ai gagné en efficacité et en sérénité pour aborder les sujets des différentes banques. Vivement conseillé aux 1ères et 2ème années. »
-                </p>
-                <p class="temoignage-author">— Mathilde, étudiante en PSI</p>
-            </div>
-            
-            <!-- PSI Avis 3 -->
-            <div class="temoignage-card">
-                <p style="font-size: 1.1rem; line-height: 1.7; font-style: italic; color: #333; margin-bottom: 1rem;">
-                    « Le contenu proposé dans ce suivi est de très grande qualité. La sélection des sujets de concours est toujours pertinente et permet de maîtriser en profondeur les notions essentielles du programme. De plus, les fiches fournies balaient efficacement les exercices classiques et aident à forger les automatismes indispensables en classe préparatoire. Je tiens particulièrement à souligner la réactivité et la clarté des explications : chaque question est prise très au sérieux et aucune réponse n’est survolée ou bâclée. C'est un accompagnement exigeant qui ne fait pas le travail à notre place, mais qui offre un véritable guidage permettant de décupler notre efficacité au quotidien. »
-                </p>
-                <p class="temoignage-author">— Antoine, élève en PSI</p>
-            </div>        </div>
-    </section>
-
-    <!-- CE QUE TU REÇOIS -->
-    <section class="piliers" id="ce-que-tu-recois">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ce que tu reçois</h2>
-                <p class="section-subtitle">Un kit clair et actionnable pour gagner du temps, des points et de la méthode.</p>
-            </div>
-
-            <div class="piliers-grid">
-                <div class="pilier-card">
-                    <div class="pilier-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16v16H4z"></path>
-                            <path d="M8 8h8v8H8z"></path>
-                        </svg>
-                    </div>
-                    <h3>Notes de cours structurées</h3>
-                    <p>Des fiches synthétiques qui vont droit au but pour réviser efficacement.</p>
-                </div>
-
-                <div class="pilier-card">
-                    <div class="pilier-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 3h18v4H3z"></path>
-                            <path d="M7 7v14"></path>
-                            <path d="M17 7v14"></path>
-                        </svg>
-                    </div>
-                    <h3>Méthodes de travail 5/2</h3>
-                    <p>Organisation, priorités et routines pour progresser sans t'épuiser.</p>
-                </div>
-
-                <div class="pilier-card">
-                    <div class="pilier-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2v20"></path>
-                            <path d="M2 12h20"></path>
-                            <path d="M5 5l14 14"></path>
-                        </svg>
-                    </div>
-                    <h3>Plan d'action hebdo</h3>
-                    <p>Un système simple pour savoir quoi bosser, quand et pourquoi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3 PILIERS DE LA PERFORMANCE -->
-    <section class="piliers" id="methodes">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Les 3 Piliers de la Réussite (Ce qui a tout changé)</h2>
-                <p class="section-subtitle">Comment je suis passé d'élève 'moyen' à fort sans m'épuiser.</p>
-            </div>
-
-            <div class="piliers-grid">
-                <!-- Pilier 1 : Loi de Pareto -->
-                <div class="pilier-card pilier-highlight">
-                    <div class="pilier-icon">
-                        <!-- Icône cible/éclair -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="4"></circle>
-                            <line x1="12" y1="2" x2="12" y2="6"></line>
-                            <line x1="12" y1="18" x2="12" y2="22"></line>
-                            <line x1="2" y1="12" x2="6" y2="12"></line>
-                            <line x1="18" y1="12" x2="22" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h3>La Loi de Pareto (80/20)</h3>
-                    <p>Arrêtez de vouloir tout apprendre. En prépa, <strong>20% des exercices classiques</strong> rapportent <strong>80% des points</strong>. Je vous apprends à cibler ces <strong>incontournables</strong> pour sécuriser vos notes instantanément, au lieu de vous noyer dans les détails.</p>
-                </div>
-
-                <!-- Pilier 2 : Efficacité Radicale -->
-                <div class="pilier-card">
-                    <div class="pilier-icon">
-                        <!-- Icône sablier/batterie -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="7" y="2" width="10" height="20" rx="4" ry="4"></rect>
-                            <rect x="9" y="6" width="6" height="8" rx="2" ry="2" fill="currentColor"></rect>
-                        </svg>
-                    </div>
-                    <h3>L'Efficacité Radicale</h3>
-                    <p>Travailler 15h par jour est une <strong>erreur de débutant</strong>. Découvrez le <strong>Time-Boxing</strong> et la <strong>gestion d'énergie</strong>. Mon système vous permet de <strong>dormir 8h</strong> par nuit tout en abattant plus de travail utile que la majorité des candidats.</p>
-                </div>
-
-                <!-- Pilier 3 : Hacking de Concours -->
-                <div class="pilier-card">
-                    <div class="pilier-icon">
-                        <!-- Icône drapeau/trophée -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16v2a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V4z"></path>
-                            <polyline points="8 10 8 20"></polyline>
-                            <polyline points="16 10 16 20"></polyline>
-                            <line x1="12" y1="14" x2="12" y2="20"></line>
-                        </svg>
-                    </div>
-                    <h3>Le "Hacking" de Concours</h3>
-                    <p>Le jour J, ce n'est pas le plus <strong>savant</strong> qui gagne, c'est le plus <strong>stratège</strong>. <strong>Analyse dimensionnelle</strong>, <strong>rédaction parfaite</strong>, <strong>art de l'impasse intelligente</strong> : apprenez à voler les <strong>points "gratuits"</strong> que les autres laissent passer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RESSOURCES HUB -->
-    <section class="ressources" id="ressources">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">La Librairie des Ressources Prépa</h2>
-                <p class="section-subtitle">Fiches de révision, méthodes et exercices pour toutes les filières</p>
-                <p class="section-intro">Fiches de révision, exercices types et méthodes d'apprentissage. Téléchargez gratuitement les outils et stratégies qui vous feront <strong>gagner du temps et des points</strong> en Maths, Physique et Français-Philo.</p>
-            </div>
-
-            <!-- Filtres et Recherche -->
-                        <div style="text-align: center; margin-bottom: 2rem;">
-                <details class="resources-details" id="resources-details" style="text-align: left;">
-                    <summary class="button button-secondary summary-btn" id="resources-summary" style="list-style: none; margin: 0 auto 1.5rem auto; cursor: pointer; display: table; width: max-content; padding: 0.875rem 2rem;">
-                        <div id="summary-text" style="pointer-events: none; display: flex; align-items: center; justify-content: center; width: 100%;">Voir toutes les fiches de révision ▼</div>
-                    </summary>
-                    <style>
-                        summary::-webkit-details-marker { display: none; }
-                        details > summary { list-style: none; }
-                        details[open] #summary-text { content: "Fermer les fiches de révision ▲"; }
-                    </style>
-                    <div class="details-content" style="animation: fadeInUp 0.3s ease-out;">
-                <div class="filters-container">
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Rechercher une ressource..." aria-label="Rechercher">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="tous">Tous</button>
-                    <button class="filter-btn" data-filter="maths">Maths</button>
-                    <button class="filter-btn" data-filter="physique">Physique</button>
-                    <button class="filter-btn" data-filter="sup">SUP</button>
-                    <button class="filter-btn" data-filter="spe">SPÉ</button>
-                </div>
-            </div>
-
-            <!-- Grille de Ressources -->
-            <div class="resources-grid" id="resources-grid">
-                <!-- Maths SUP & SPÉ en tête -->
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Inégalités Classiques — Fiche Méthode</h3>
-                    <p class="card-description">Toutes les inégalités incontournables pour la prépa : Cauchy-Schwarz, Minkowski, Jensen et bien d'autres (SUP &amp; SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-inegalites-classiques-sup-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="probabilites,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Probabilités — Fiche Méthode</h3>
-                    <p class="card-description">Méthodes et exercices classiques pour maîtriser les probabilités en prépa (niveau SUP &amp; SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Probabilités</span></div>
-                    <a href="ressources/fiche-probas-sup-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="algebre,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Algèbre Linéaire — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices et méthodes incontournables pour maîtriser l’algèbre linéaire en prépa (SUP &amp; SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Algèbre</span></div>
-                    <a href="ressources/fiche-classiques-algebre-lineaire-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="algebre,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Algèbre Bilinéaire — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices et méthodes incontournables pour maîtriser l’algèbre bilinéaire en prépa (niveau SUP).</p>
-                    <div class="topic-tags"><span class="topic-tag">Algèbre</span></div>
-                    <a href="ressources/fiche-classiques-algebre-bilineaire-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Intégration sur un segment — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser l’intégration sur un segment en prépa (niveau SUP).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-integration-segment-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Développements Limités — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques et incontournables pour maîtriser les DL en prépa (niveau SUP).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-dl-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Suites — Fiche des Classiques</h3>
-                    <p class="card-description">Toutes les démonstrations et exercices incontournables pour maîtriser les suites en prépa.</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-suites.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Séries Numériques — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices et méthodes incontournables pour maîtriser les séries numériques en prépa (SUP &amp; SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-series-numeriques.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Intégrales généralisées — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser les intégrales généralisées en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-integrales-generalisees-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Intégrales à paramètre — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser les intégrales à paramètre en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-integrales-a-parametre-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Topologie des EVN — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser la topologie des EVN en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-topologie-evn-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Suites de fonctions — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser les suites de fonctions en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-suites-de-fonctions-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Séries entières — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser les séries entières en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-series-entieres-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Calcul différentiel — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser le calcul différentiel en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-calcul-differentiel-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="analyse,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Séries de fonctions — Fiche des Classiques</h3>
-                    <p class="card-description">Exercices classiques pour maîtriser les séries de fonctions en prépa (niveau SPÉ).</p>
-                    <div class="topic-tags"><span class="topic-tag">Analyse</span></div>
-                    <a href="ressources/fiche-classiques-series-de-fonctions-spe.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="maths" data-tags="algebre,spe">
-                    <div class="card-header">
-                        <span class="matiere-tag maths">Maths</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Réduction — Fiche des Classiques (Partie 1)</h3>
-                    <p class="card-description">Toutes les démonstrations et exercices incontournables pour maîtriser la réduction en prépa.</p>
-                    <div class="topic-tags"><span class="topic-tag">Algèbre</span></div>
-                    <a href="ressources/reduction-exos-classiques.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <!-- Autres matières -->
-                <div class="resource-card" data-matiere="physique" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag physique" style="background-color: var(--color-physique);">Physique</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Électrocinétique (filtres) — Fiche de cours</h3>
-                    <p class="card-description">Résumé complet du cours d'électrocinétique SUP : définitions, lois, méthodes et points clés pour réussir.</p>
-                    <a href="ressources/fiche-electrocinétique-physique-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="physique" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag physique" style="background-color: var(--color-physique);">Physique</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Induction — Fiche de cours</h3>
-                    <p class="card-description">Résumé complet du cours d'induction SUP : définitions, lois, méthodes et points clés pour réussir.</p>
-                    <a href="ressources/Fiche_physique_Induction.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="methodes" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag methodes">Méthodes</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Méthode — Système Anti-Friction</h3>
-                    <p class="card-description">Plan d'action complet pour structurer vos semaines de prépa et garder un rythme durable.</p>
-                    <a href="ressources/methode-systeme-anti-friction.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="methodes" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag methodes">Méthodes</span>
-                        <span class="level-tag">SUP &amp; SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Protocole Anti-Fatigue &amp; Sommeil</h3>
-                    <p class="card-description">Routine en quatre étapes pour retrouver un sommeil réparateur et maintenir votre énergie en prépa.</p>
-                    <a href="ressources/fiche-protocole-anti-fatigue.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="physique" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag physique" style="background-color: var(--color-physique);">Physique</span>
-                        <span class="level-tag">SUP</span>
-                    </div>
-                    <h3 class="card-title">Thermodynamique — Fiche de cours</h3>
-                    <p class="card-description">Résumé complet du cours de thermodynamique SUP : définitions, théorèmes, méthodes et points clés pour réussir.</p>
-                    <a href="ressources/fiche-classiques-thermodynamique-sup.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-
-                <div class="resource-card" data-matiere="physique" data-tags="spe">
-                    <div class="card-header">
-                        <span class="matiere-tag physique" style="background-color: var(--color-physique);">Physique</span>
-                        <span class="level-tag">SPÉ</span>
-                    </div>
-                    <h3 class="card-title">Opérations vectorielles — Fiche de cours</h3>
-                    <p class="card-description">Résumé des opérations vectorielles en Physique SPÉ : définitions, propriétés et méthodes essentielles.</p>
-                    <a href="ressources/operations-vectorielles.pdf" download class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Télécharger
-                    </a>
-                </div>
-            </div>
-                            </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Questions fréquentes</h2>
-                <p class="section-subtitle">Des réponses rapides aux doutes les plus courants.</p>
-            </div>
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <h3>Est-ce adapté si je suis en difficulté ?</h3>
-                    <p>Oui. Le suivi sert d'abord à clarifier les priorités et à remettre une méthode efficace en place.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Combien de temps faut-il pour voir des résultats ?</h3>
-                    <p>Souvent dès les premières semaines grâce à un plan simple et des actions ciblées.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Ça convient aussi en MPSI/PCSI/PSI ?</h3>
-                    <p>Oui, les principes d'organisation et de méthode s'appliquent à toutes les filières.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DIAGNOSTIC GRATUIT -->
-    <section class="diagnostic">
-        <div class="container">
-            <div class="diagnostic-content">
-                <div class="diagnostic-glasscard">
-                    <div class="diagnostic-badge">Places limitées</div>
-                    <div class="diagnostic-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
-                    </div>
-                    <h2 class="diagnostic-title">Candidature — Entretien 20 min pour le suivi personnalisé</h2>
-                    <p class="diagnostic-description">
-                        Appel réservé aux élèves motivés pour un coaching d'élite. <br>Postule pour bénéficier d'un accompagnement sur-mesure.
-                    </p>
-                    <div class="diagnostic-features">
-                        <div class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Audit Flash :</strong> Diagnostic express de ton point faible (<strong>Méthode</strong>, <strong>Mental</strong> ou <strong>Orga</strong>).</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>3 Leviers d'Urgence :</strong> 3 actions concrètes à appliquer <strong>dès ce soir</strong>.</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Feuille de Route Premium :</strong> Plan d'action personnalisé pour ton objectif.</span>
-                        </div>
-                    </div>
-                    <a href="https://calendly.com/monsieurdiego-rien/20min" target="_blank" class="button button-premium diagnostic-cta">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Postuler au suivi personnalisé
-                    </a>
-                </div>
-                <p class="diagnostic-note">⚠️ Appel dédié aux personnes prêtes à s'engager — le lien Calendly sert à postuler au suivi personnalisé. Pour des conseils gratuits, consultez le site : https://monsieurdiego.github.io/carnet-dinge/</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Carnet d'Ingé</h3>
-                    <p>Atteindre l'excellence en Classe Préparatoire</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="#ressources">Ressources</a></li>
-                        <li><a href="#methodes">Méthodes</a></li>
-                        <li><a href="#declic">Mon Histoire</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Suivez-moi</h4>
-                    <div class="social-icons">
-                        <a href="https://www.youtube.com/@CarnetDinge" target="_blank" aria-label="YouTube">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/diego-mallard-b06a221bb/" target="_blank" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Carnet d'Ingé. Tous droits réservés.</p>
-                <a href="privacy.html" class="privacy-link">Politique de confidentialité</a>
-                <a href="#" id="cookie-settings-link">Gérer mes cookies</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" integrity="sha256-gv7w9SzhFomjSWvSNaBCEdi71JlbJSAOtXZCTlKNkAM=" crossorigin="anonymous"></script>
-    <script src="cookie-consent.js"></script>
-    <!-- GoatCounter analytics -->
-    <script data-goatcounter="https://monsieurdiego.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+  // Mobile nav
+  var t=document.getElementById('menu-toggle'),n=document.getElementById('nav');
+  if(t){t.addEventListener('click',function(){n.classList.toggle('open');});}
+  document.querySelectorAll('.nav-link').forEach(function(l){l.addEventListener('click',function(){n.classList.remove('open');});});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" integrity="sha256-gv7w9SzhFomjSWvSNaBCEdi71JlbJSAOtXZCTlKNkAM=" crossorigin="anonymous"></script>
+<script src="cookie-consent.js"></script>
+<!-- GoatCounter analytics -->
+<script data-goatcounter="https://monsieurdiego.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
