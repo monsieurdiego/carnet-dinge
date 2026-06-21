@@ -304,13 +304,18 @@
       <h2 class="section-title news" style="margin-top:12px;">Reçois mes meilleures méthodes par mail</h2>
       <p>Je garde mes conseils les plus concrets pour ma liste privée, et c'est là que j'annoncerai en avant-première mes prochains projets. Laisse ton e-mail, rien de plus.</p>
       <!-- Formulaire branche sur Brevo (double opt-in). Champs standard Brevo : EMAIL + honeypot email_address_check. -->
-      <form class="news-form" method="POST" action="https://482c408a.sibforms.com/serve/MUIFAEd_duLtJ-iXiLx-TXx6M21PKrKSJ7KB2KcY46rxAIVavnmth0Vf9XHSGCiEHL_BMO5AQG_mm_M_hi5K0AXmVCAFLOXjuypsk4EQQ7tZdve15TJHPhCdyd7cU0qKGcAtcXbpkEx3Un9ZjEhGYszfltkmmKaKVP94lPT_XmiaBOk5IaqXCMdKBBQLmV6bhHFWrWy7OMJVooptCQ==">
+      <form class="news-form" id="news-form" method="POST" target="brevo-sink" action="https://482c408a.sibforms.com/serve/MUIFAEd_duLtJ-iXiLx-TXx6M21PKrKSJ7KB2KcY46rxAIVavnmth0Vf9XHSGCiEHL_BMO5AQG_mm_M_hi5K0AXmVCAFLOXjuypsk4EQQ7tZdve15TJHPhCdyd7cU0qKGcAtcXbpkEx3Un9ZjEhGYszfltkmmKaKVP94lPT_XmiaBOk5IaqXCMdKBBQLmV6bhHFWrWy7OMJVooptCQ==" onsubmit="setTimeout(function(){document.getElementById('news-form').style.display='none';document.getElementById('news-fine').style.display='none';document.getElementById('news-done').style.display='block';},100);">
         <input type="email" name="EMAIL" placeholder="ton.email@exemple.fr" required aria-label="Adresse e-mail">
         <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
         <input type="hidden" name="locale" value="fr">
         <button type="submit" class="btn btn-primary">Je m'inscris</button>
       </form>
-      <p class="news-fine">Pas de spam. Désinscription en un clic. Tes données restent privées.</p>
+      <!-- Cible invisible : recoit la reponse de Brevo pour eviter la page blanche -->
+      <iframe name="brevo-sink" title="Brevo" aria-hidden="true" style="display:none;width:0;height:0;border:0;"></iframe>
+      <div id="news-done" role="status" style="display:none;max-width:480px;margin:0 auto;background:var(--bg);border:1px solid var(--accent);border-radius:10px;padding:18px 20px;color:var(--ink);font-size:15px;line-height:1.55;text-align:left;">
+        <strong style="color:var(--accent);">Presque fini.</strong> On vient de t'envoyer un e-mail de confirmation. Clique sur le lien à l'intérieur pour valider ton inscription. Pense à regarder l'onglet "Promotions" (ou tes spams) si tu ne le vois pas tout de suite.
+      </div>
+      <p class="news-fine" id="news-fine">Pas de spam. Désinscription en un clic. Tes données restent privées.</p>
     </div>
   </div>
 </section>
